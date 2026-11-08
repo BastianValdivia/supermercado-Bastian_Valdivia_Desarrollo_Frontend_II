@@ -1,0 +1,106 @@
+@import './styles/theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Estilos base
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+  }
+
+  h1, h2, h3 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* ==========================================================================
+   Clases reutilizables (@apply): evitan repetir las mismas utilidades en JSX
+   ========================================================================== */
+@layer components {
+  /* Botones */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2
+           disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent-dark;
+  }
+  .btn-outline {
+    @apply border border-line bg-surface text-ink hover:border-primary hover:text-primary;
+  }
+
+  /* Tarjetas */
+  .tarjeta {
+    @apply rounded-card border border-line bg-surface shadow-sm;
+  }
+
+  /* Formularios */
+  .etiqueta {
+    @apply mb-1 block text-sm font-semibold text-ink;
+  }
+  .campo {
+    @apply w-full rounded-lg border border-line bg-surface px-3 py-2.5 text-sm text-ink
+           placeholder:text-muted/70
+           focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30;
+  }
+  .campo-error {
+    @apply border-danger focus:border-danger focus:ring-danger/30;
+  }
+  .mensaje-error {
+    @apply mt-1 text-sm text-danger;
+  }
+
+  /* Etiquetas pequeñas */
+  .badge {
+    @apply inline-block rounded-full bg-primary-soft px-2.5 py-0.5 text-xs font-semibold text-primary-dark;
+  }
+  .badge-agotado {
+    @apply inline-block rounded-full bg-danger/10 px-2.5 py-0.5 text-xs font-semibold text-danger;
+  }
+
+  /* Foto del hero con marca: en escritorio se desvanece por el borde izquierdo */
+  @media (min-width: 768px) {
+    .hero-foto {
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 45%);
+      mask-image: linear-gradient(to right, transparent 0%, #000 45%);
+    }
+  }
+
+  /* Enlaces de la barra de navegación */
+  .nav-link {
+    @apply rounded-lg px-3 py-2 text-sm font-semibold text-ink transition hover:text-primary;
+  }
+  .nav-link-activo {
+    @apply text-primary;
+  }
+}
+
+@keyframes caer-nieve {
+  0% {
+    transform: translate3d(0, -15px, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(20px, 45px, 0) rotate(180deg);
+  }
+  100% {
+    transform: translate3d(-15px, 110px, 0) rotate(360deg);
+  }
+}
+
+.animate-caer-nieve {
+  animation-name: caer-nieve;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

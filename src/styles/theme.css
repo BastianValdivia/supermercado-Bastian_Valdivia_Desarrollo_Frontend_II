@@ -1,0 +1,32 @@
+/* ==========================================================================
+   TEMA GLOBAL: ÚNICO LUGAR PARA CAMBIAR LA PALETA Y LA TIPOGRAFÍA
+   --------------------------------------------------------------------------
+   Los colores se escriben como tres números RGB separados por espacios
+   (sin comas ni "rgb()"), para que Tailwind pueda aplicar opacidad.
+   Ejemplo: --color-primary: 10 107 53;  =>  rgb(10 107 53)
+   ========================================================================== */
+
+:root {
+  /* Marca (tomados del logo) */
+  --color-primary: 10 107 53;        /* verde principal */
+  --color-primary-dark: 11 74 37;    /* verde oscuro: hover, banners, footer */
+  --color-primary-soft: 230 242 234; /* verde muy claro: fondos suaves */
+  --color-accent: 232 148 60;        /* naranja del logo */
+  --color-accent-dark: 201 122 37;   /* naranja oscuro: hover */
+
+  /* Neutros */
+  --color-ink: 28 38 32;             /* texto principal */
+  --color-muted: 98 112 103;         /* texto secundario */
+  --color-line: 222 228 224;         /* bordes y separadores */
+  --color-canvas: 245 247 245;       /* fondo de la página */
+  --color-surface: 255 255 255;      /* fondo de tarjetas y navbar */
+
+  /* Estados */
+  --color-danger: 196 48 48;         /* errores y stock agotado */
+
+  /* Tipografía (fuente cargada en main.jsx con @fontsource) */
+  --font-sans: 'Montserrat Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Forma */
+  --radius-card: 1rem;
+}
