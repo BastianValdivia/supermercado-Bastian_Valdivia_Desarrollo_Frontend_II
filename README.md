@@ -5,7 +5,7 @@ Actividades de **Desarrollo Frontend II (PFY2202)**: sitio web de un supermercad
 Proyecto académico. No hay backend ni persistencia: al recargar la página, el inventario y la sesión vuelven a su estado inicial.
 
 - **Autor:** Bastián Andrés Valdivia Miranda
-- **Repositorio:** _(URL del repositorio)_
+- **Repositorio:** https://github.com/BastianValdivia/supermercado-Bastian_Valdivia_Desarrollo_Frontend_II
 
 ## Cómo ejecutarlo
 
